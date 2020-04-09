@@ -15,11 +15,11 @@
                         </div>
                         <div class="card-body ">
                             <div style="display: flex; justify-content: space-between;">
-                                <p class="card-text "><i class="fa fa-map-marker" aria-hidden="true"> {{eventLists.city}}</i> </p>
-                                <p class="card-text "><i class="fa fa-calendar" aria-hidden="true">{{eventLists.startDate}}</i></p>
+                                <p class="card-text "><i class="fa fa-map-marker" aria-hidden="true"> {{this.city}}</i> </p>
+                                <p class="card-text "><i class="fa fa-calendar" aria-hidden="true">{{this.startDate}}</i></p>
                             </div>
-                            <h4 class="card-title ">{{eventLists.title}}</h4>
-                            <button type="button" class="btn btn-secondary btn-lg btn-block"><a href="#" style="text-decoration: none; color: white;"><a href="#" style="text-decoration: none; color: white;">Read More</a></a></button>
+                            <h4 class="card-title">{{this.title}}</h4>
+                            <button type="button" class="btn btn-secondary btn-lg btn-block"><a href="/post/{{this._id}}" style="text-decoration: none; color: white;"><a href="/post/{{this._id}}" style="text-decoration: none; color: white;">Read More</a></a></button>
                         </div>
                     </div>
                 </div>

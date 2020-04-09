@@ -5,16 +5,14 @@ module.exports = {
     },
     eventsPage: async(req, res, next) => {
         const eventLists = await Event.find({});
-        console.log(eventLists);
-        // res.json(eventLists);
         res.render('events', {
             eventLists
         });
     },
-    postPage: (req, res, next) => {
-        res.render('post');
+    createPage: (req, res, next) => {
+        res.render('create');
     },
-    post: (req, res, next) => {
+    create: (req, res, next) => {
         const event = new Event(req.body);
         event.save().then((data) => {
             res.redirect('events');
@@ -23,5 +21,11 @@ module.exports = {
             res.status(404).json(error);
             console.log(error);
         })
+    },
+    singlepost: async(req, res, next) => {
+        console.log(req.params);
+        const post = await Event.findById(req.params.id)
+            // res.json(post);
+        res.render('post', { post })
     }
 }
