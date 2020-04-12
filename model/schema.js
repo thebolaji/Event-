@@ -33,6 +33,10 @@ var eventSchema = new Schema({
         type: String,
         required: [true, 'Most no be Empty']
     },
+    image: {
+        type: String,
+        required: [true, 'Most no be Empty']
+    },
 });
 
 const Events = mongoose.model('Event', eventSchema);

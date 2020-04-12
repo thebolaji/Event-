@@ -1,4 +1,5 @@
 const Event = require('../model/schema');
+
 module.exports = {
     homePage: (req, res, next) => {
         res.render('index');
@@ -13,14 +14,25 @@ module.exports = {
         res.render('create');
     },
     create: (req, res, next) => {
-        const event = new Event(req.body);
-        event.save().then((data) => {
-            res.redirect('events');
-            console.log(data);
-        }).catch((error) => {
-            res.status(404).json(error);
-            console.log(error);
+        let imageFile = req.files.imageFile
+            // console.log(imageFile);
+        imageFile.mv("./public/posts/" + imageFile.name, function(error) {
+            if (error) {
+                console.log(error);
+            }
+            const event = new Event({
+                ...req.body,
+                image: `/posts/${imageFile.name}`
+            });
+            event.save().then((data) => {
+                res.redirect('events');
+                console.log(data);
+            }).catch((error) => {
+                res.status(404).json(error);
+                console.log(error);
+            })
         })
+
     },
     singlepost: async(req, res, next) => {
         console.log(req.params);

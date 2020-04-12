@@ -1,37 +1,39 @@
 <div class="posZone">
-<form action="/create" method="post">
-        <fieldset>
-          <legend><span class="number">1</span>Event Details</legend>
-          <label for="name">Event Title:</label>
-          <input type="text" id="name" name="title">
-        <label for="descrip">Event Description:</label>
-        <textarea id="descrip" name="description" rows="6" cols="50"></textarea>
-        </fieldset>
-        <br>
-        <br>
-        <fieldset>
-          <legend><span class="number">2</span>Event Date & TIme</legend>
-          <label for="datetimepicker1">Event Start:</label>
-          <div class='input-group date' id='datetimepicker1'>
-                     <input type='text' class="form-control" name="startDate"/>
-                     <span class="input-group-addon">
-                     <span class="glyphicon glyphicon-calendar"></span>
-                     </span>
-          </div>
-          <label for="datetimepicker2">Event Stop:</label>
-          <div class='input-group date' id='datetimepicker2'>
-                     <input type='text' class="form-control" name="stopDate"/>
-                     <span class="input-group-addon">
-                     <span class="glyphicon glyphicon-calendar"></span>
-                     </span>
-          </div>
-           <label for="address">Addresss:</label>
-          <input type="text" id="address" name="address">
-           <label for="name">City</label>
-          <input type="text" id="city" name="city">
-          <label for="name">State:</label>
-          <input type="text" id="state" name="state">
-        </fieldset>
-        <button type="submit">Sign Up</button>
-      </form>
+  <form action="/create" method="post" encType="multipart/form-data">
+    <fieldset>
+      <legend><span class="number">1</span>Event Details</legend>
+      <label for="name">Event Title:</label>
+      <input type="text" id="name" name="title">
+      <label for="descrip">Event Description:</label>
+      <textarea id="descrip" name="description" rows="6" cols="50"></textarea>
+    </fieldset>
+    <br>
+    <br>
+    <fieldset>
+      <legend><span class="number">2</span>Event Date & TIme</legend>
+      <label for="datetimepicker1">Event Start:</label>
+      <div class='input-group date' id='datetimepicker1'>
+        <input type='text' class="form-control" name="startDate" />
+        <span class="input-group-addon">
+          <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+      </div>
+      <label for="datetimepicker2">Event Stop:</label>
+      <div class='input-group date' id='datetimepicker2'>
+        <input type='text' class="form-control" name="stopDate" />
+        <span class="input-group-addon">
+          <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+      </div>
+      <label for="address">Addresss:</label>
+      <input type="text" id="address" name="address">
+      <label for="name">City</label>
+      <input type="text" id="city" name="city">
+      <label for="name">State:</label>
+      <input type="text" id="state" name="state">
+    </fieldset>
+    <label for="myfile">Upload Event Image:</label>
+    <input type="file" id="myfile" name="imageFile" ><br><br>
+    <button type="submit">Sign Up</button>
+  </form>
 </div>
