@@ -28,7 +28,7 @@ module.exports = {
                 res.redirect('events');
                 console.log(data);
             }).catch((error) => {
-                res.status(404).json(error);
+                res.status(400).json(error);
                 console.log(error);
             })
         })
