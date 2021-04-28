@@ -1,4 +1,5 @@
 const Event = require('../model/schema');
+// 
 
 module.exports = {
     homePage: (req, res, next) => {
